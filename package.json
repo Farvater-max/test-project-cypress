@@ -1,0 +1,22 @@
+{
+  "name": "test-project-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farvater-max/test-project-cypress.git"
+  },
+  "author": "Max Rozhkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farvater-max/test-project-cypress/issues"
+  },
+  "homepage": "https://github.com/Farvater-max/test-project-cypress#readme",
+  "devDependencies": {
+    "cypress": "^8.5.0"
+  }
+}
