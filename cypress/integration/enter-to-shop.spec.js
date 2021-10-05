@@ -19,7 +19,7 @@ describe('Enter to site', () => {
             cy.get('.form-inline > .form-control').invoke('attr', 'placeholder').should('contain', 'Введите название') 
 
             cy.get('.form-inline > .btn').should('exist')
-            cy.get('.form-inline > .btn').should('have.text', 'Найти') 
+            cy.get('.form-inline > .btn').should('have.text', 'Найт') 
 
             cy.log('Search cart icon')  
             cy.screenshot('main-page');
