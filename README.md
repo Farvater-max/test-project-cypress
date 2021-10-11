@@ -16,4 +16,12 @@ To clean last run tests results before start a new iteration use command
 npm run pretest
 ```
 
+Cypress report: https://farvater-max.github.io/test-project-cypress/
+
+If you create PR or push your code in `main` branch will starting github actions for run cypress test and you can look new report on github pages in this repo
+
+
+
+
+
 
