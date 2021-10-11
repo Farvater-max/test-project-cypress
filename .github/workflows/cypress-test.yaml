@@ -2,7 +2,7 @@ name: Run cypress test and publish report
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
 
@@ -15,7 +15,7 @@ jobs:
     
       - name: Install a cypress test project 
       run: |
-        npm ci
+        npm i
         $(npm bin)/cypress cache path
         $(npm bin)/cypress cache list
         $(npm bin)/cypress verify
