@@ -1,28 +1,22 @@
 name: Run cypress test and publish report
 on:
   push:
-    branches:
-      - 'main'
+    branches: ['main']
+  pull_request:
+	  branches: [ main ]
 
 jobs:
+  test:
+    name: Init and run test 
+    runs-on: ubuntu-latest
 
-  cypress-e2e-chrome81:
-    name: Run on Chrome 81
-    runs-on: ubuntu-18.04
-    container: cypress/browsers:node12.16.2-chrome81-ff75
     steps:
       - uses: actions/checkout@v2
-    
-      - name: Install a cypress test project 
-      run: |
-        npm i
-        $(npm bin)/cypress cache path
-        $(npm bin)/cypress cache list
-        $(npm bin)/cypress verify
-
-      - name: Run Cypress tests
-      run: npm run test
-      continue-on-error: true
+      - uses: actions/setup-node@v2
+        with:
+		          node-version: '12'
+      - run: npm ci
+      - run: npm run test
 
       - name: Deploy cypress report
       uses: peaceiris/actions-gh-pages@v3
