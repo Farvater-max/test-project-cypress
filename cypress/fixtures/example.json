@@ -1,5 +1,6 @@
 {
   "main_url": "http://shop.bugred.ru/",
+  "login_url": "http://shop.bugred.ru/user/login/index",
   "login": "test@mail.com",
   "password": "1"
 }
