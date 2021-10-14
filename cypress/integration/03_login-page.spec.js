@@ -1,5 +1,5 @@
 describe('Login page', () => {
-    it('Fields validation and log in', () => {
+    it('Open log in pages and check fields and email validation', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page')
             cy.visit(data.main_url)
@@ -7,15 +7,26 @@ describe('Login page', () => {
 
             cy.log('Search enter tab')            
             cy.get('.navbar-nav > :nth-child(4) > .nav-link').click()
-
+            
+            cy.log('Enter to login page')
             cy.get('.breadcrumb-item.active').should('have.text', 'Авторизация')
+            
+            cy.log('Check placeholder')
             cy.get('#exampleInputEmail1').invoke('attr', 'placeholder').should('contain', 'Введите email') 
             cy.get('#exampleInputPassword1').invoke('attr', 'placeholder').should('contain', 'Введите пароль') 
-            cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click()
             
+            cy.log('Submit if fields empty')
+            cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click()
+            cy.wait(500)
             cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage')
                 .should('equal', 'Заполните это поле.')
-            
+        })
+     })
+        
+     it('Fields validation and log in', () => {
+         cy.fixture('example.json').then(data => {
+            cy.log('Enter to login page')
+            cy.visit(data.login_url)
             cy.get('#exampleInputEmail1').type('1234')
             cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage')
                 .should('equal', 'Адрес электронной почты должен содержать символ "@". В адресе "1234" отсутствует символ "@".')
