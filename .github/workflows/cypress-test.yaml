@@ -21,6 +21,8 @@ jobs:
       - name: Copy test execution screenshots
         run: |
           cp -r cypress/screenshots public/screenshots
+          cp -r cypress/reports/mochareports public/screenshots
+
 
       - name: Deploy cypress report
         uses: peaceiris/actions-gh-pages@v3

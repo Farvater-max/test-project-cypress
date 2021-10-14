@@ -52,7 +52,7 @@ describe('Login page', () => {
             cy.get('.nav-item.show > .dropdown-menu')
             cy.get('[href="/user/setup/index"]').should('have.text', 'Настройки')
             cy.get('[href="/user/lk/index"]').should('have.text', 'Личный кабинет')
-            cy.get('[href="/user/lk/logout"]').should('have.text', 'Выйдем')
+            cy.get('[href="/user/lk/logout"]').should('have.text', 'Выйти')
         })
     })
 });
