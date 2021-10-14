@@ -17,6 +17,11 @@ jobs:
           node-version: '12'
       - run: npm ci
       - run: npm run test
+      
+      - name: Copy test execution screenshots
+        run: |
+          mkdir public
+          cp -r cypress/screenshots public/screenshots
 
       - name: Deploy cypress report
         uses: peaceiris/actions-gh-pages@v3
