@@ -1,0 +1,461 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 11,
+    "passes": 9,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-10-14T20:10:52.203Z",
+    "end": "2021-10-14T20:11:43.728Z",
+    "duration": 26707,
+    "testsRegistered": 11,
+    "passPercent": 81.81818181818181,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b5626e5-65a7-4767-8d02-d45812a26dbd",
+      "title": "",
+      "fullFile": "cypress/integration/01_enter-to-shop.spec.js",
+      "file": "cypress/integration/01_enter-to-shop.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "796e7b06-8af2-4742-910e-b41cf9466472",
+          "title": "Enter to site",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First enter to web-page",
+              "fullTitle": "Enter to site First enter to web-page",
+              "timedOut": null,
+              "duration": 3523,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('title').should('have.text', 'Тестирование');\n  cy.log('Search nav elements');\n  cy.get('.navbar-nav > :nth-child(1) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(2) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(4) > .nav-link').should('exist');\n  cy.log('Search cart icon');\n  cy.get('.fas').should('exist');\n  cy.log('Form input');\n  cy.get('.form-inline > .form-control').should('exist');\n  cy.get('.form-inline > .form-control').invoke('attr', 'placeholder').should('contain', 'Введите название');\n  cy.get('.form-inline > .btn').should('exist');\n  cy.get('.form-inline > .btn').should('have.text', 'Найти');\n  cy.log('Search cart icon');\n  cy.screenshot('main-page');\n});",
+              "err": {},
+              "uuid": "88ddabc7-bdde-46cf-912c-93b525ff64c8",
+              "parentUUID": "796e7b06-8af2-4742-910e-b41cf9466472",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "88ddabc7-bdde-46cf-912c-93b525ff64c8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3523,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "af4f38d9-a822-4a11-88ec-45de707c0986",
+      "title": "",
+      "fullFile": "cypress/integration/02_category-drop-down.spec.js",
+      "file": "cypress/integration/02_category-drop-down.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aa235d5e-4854-4755-b765-ff0f935df85a",
+          "title": "Category navbar dropdow by click",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dropdow by click",
+              "fullTitle": "Category navbar dropdow by click Dropdow by click",
+              "timedOut": null,
+              "duration": 3996,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('title').should('have.text', 'Тестирование');\n  cy.log('Search nav elements');\n  cy.get('#navbarDropdown').click();\n  cy.get('.dropdown-menu a').should('have.length', 12).first().should('have.text', 'Категория 1');\n  cy.get('.dropdown-menu > :nth-child(5)').click();\n  cy.get('.breadcrumb-item.active').should('have.text', 'Платья');\n  cy.get('#navbarDropdown').click();\n  cy.get('.dropdown-menu > :nth-child(12)').click();\n  cy.get('.breadcrumb-item.active').should('have.text', 'Футболки');\n  cy.get('#navbarDropdown').click();\n  cy.get('.dropdown-menu > :nth-child(6)').click();\n  cy.get('.breadcrumb-item.active').should('have.text', 'Шорты');\n  cy.get('#navbarDropdown').click();\n  cy.get('.dropdown-menu > :nth-child(1)').click();\n  cy.get('.breadcrumb-item.active').should('have.text', 'Категория 1');\n  cy.get('.breadcrumb > :nth-child(1) > a').click();\n  cy.contains('.breadcrumb > :nth-child(1) > a').should('not.exist');\n});",
+              "err": {},
+              "uuid": "29c746f0-9f87-4793-aad2-f507ccdaa9ac",
+              "parentUUID": "aa235d5e-4854-4755-b765-ff0f935df85a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "29c746f0-9f87-4793-aad2-f507ccdaa9ac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3996,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "65a7d66d-6973-450c-ab8d-5d0ba976abf0",
+      "title": "",
+      "fullFile": "cypress/integration/03_buy_without_registration.spec.js",
+      "file": "cypress/integration/03_buy_without_registration.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "197adbf8-d88e-4bb9-8401-46d23da1e54b",
+          "title": "Purchase scenario without registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Selection of subjects item",
+              "fullTitle": "Purchase scenario without registration Selection of subjects item",
+              "timedOut": null,
+              "duration": 2404,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('.btn.btn-primary').scrollIntoView().should('be.visible');\n  cy.log('Type select');\n  cy.get(':nth-child(35) > .form-control').type(401);\n  cy.get(':nth-child(36) > .form-control').type(667);\n  cy.log('Submit form and check correct url');\n  cy.get('.btn.btn-primary').click();\n  cy.url().should('eq', 'http://shop.bugred.ru/?price_from=401&price_to=667');\n});",
+              "err": {},
+              "uuid": "cf10abc4-1023-4f3f-b6d6-c4f999aad651",
+              "parentUUID": "197adbf8-d88e-4bb9-8401-46d23da1e54b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get subjects item in basket",
+              "fullTitle": "Purchase scenario without registration Get subjects item in basket",
+              "timedOut": null,
+              "duration": 4659,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('Find item and add to basket');\ncy.visit('http://shop.bugred.ru/?price_from=401&price_to=667');\ncy.get(':nth-child(1) > a > .img').click();\ncy.get('#exampleCount').type('1');\ncy.get('.btn.btn-primary').should('have.text', 'Добавить в корзину').click();\ncy.get('.float-right > .nav-link').should('have.text', ' 1');\ncy.go('back');\ncy.go('back');\ncy.get(':nth-child(2) > a > .img').click();\ncy.get('#exampleCount').type('1');\ncy.get('.btn.btn-primary').should('have.text', 'Добавить в корзину').click();\ncy.log('Enter to basket and look to order');\ncy.get('.float-right > .nav-link').should('have.text', ' 2').click();\ncy.screenshot('order_page');\ncy.log('Check order sum');\ncy.get('tbody > :nth-child(1) > :nth-child(4)').then($td => {\n  const firstItem = parseFloat($td.text());\n  cy.get('tbody > :nth-child(2) > :nth-child(4)').then($td => {\n    const secondItem = parseFloat($td.text());\n    cy.get(':nth-child(3) > :nth-child(4)').then($td => {\n      const finalSum = parseFloat($td.text());\n      expect(finalSum).to.eq(firstItem + secondItem);\n    });\n  });\n});\ncy.log('Submit order form and correct URL, message');\ncy.get('#InputPhone').type('333-00-99');\ncy.get('#InputAddr').type('Санкт-Петербург, ул. Ленина, д.78, кв.98');\ncy.get('.btn.btn-primary').click();\ncy.get('h4').then($h4 => {\n  const orderNum = parseInt($h4.text().replace(/[^0-9]/g, ''));\n  const urlAdress = 'http://shop.bugred.ru/shop/cart/finish/' + orderNum;\n  const textOrder = 'Ваш заказ №' + orderNum + ' собран и отправлен. Ура!';\n  cy.url().should('eq', urlAdress);\n  cy.get('h4').contains(textOrder);\n});",
+              "err": {},
+              "uuid": "d0fe798e-4297-4d6c-8835-3117d3e06ac4",
+              "parentUUID": "197adbf8-d88e-4bb9-8401-46d23da1e54b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cf10abc4-1023-4f3f-b6d6-c4f999aad651",
+            "d0fe798e-4297-4d6c-8835-3117d3e06ac4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7063,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b72ea629-3b62-40ae-a893-b30b484a874e",
+      "title": "",
+      "fullFile": "cypress/integration/04_login-page.spec.js",
+      "file": "cypress/integration/04_login-page.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ac52787-cb97-4e1b-8859-9106257cc3dd",
+          "title": "Login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open log in pages and check fields and email validation",
+              "fullTitle": "Login page Open log in pages and check fields and email validation",
+              "timedOut": null,
+              "duration": 6503,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"screenshots/04_login-page.spec.js/Login page -- Open log in pages and check fields and email validation (failed).png\"",
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('title').should('have.text', 'Тестирование');\n  cy.log('Search enter tab');\n  cy.get('.navbar-nav > :nth-child(4) > .nav-link').click();\n  cy.log('Enter to login page');\n  cy.get('.breadcrumb-item.active').should('have.text', 'Авторизация');\n  cy.log('Check placeholder');\n  cy.get('#exampleInputEmail1').invoke('attr', 'placeholder').should('contain', 'Введите email');\n  cy.get('#exampleInputPassword1').invoke('attr', 'placeholder').should('contain', 'Введите пароль');\n  cy.log('Submit if fields empty');\n  cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click();\n  cy.wait(500);\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Заполните это поле.');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'Please fill out this field.' to equal 'Заполните это поле.'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'Please fill out this field.' to equal 'Заполните это поле.'\n    at Context.eval (http://shop.bugred.ru/__cypress/tests?p=cypress/integration/04_login-page.spec.js:115:73)",
+                "diff": "- 'Please fill out this field.'\n+ 'Заполните это поле.'\n"
+              },
+              "uuid": "144e9b09-9eef-4b38-8e20-3c4e3259abf8",
+              "parentUUID": "8ac52787-cb97-4e1b-8859-9106257cc3dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fields validation and log in",
+              "fullTitle": "Login page Fields validation and log in",
+              "timedOut": null,
+              "duration": 4678,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"screenshots/04_login-page.spec.js/Login page -- Fields validation and log in (failed).png\"",
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to login page');\n  cy.visit(data.login_url);\n  cy.get('#exampleInputEmail1').type('1234');\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Адрес электронной почты должен содержать символ \"@\". В адресе \"1234\" отсутствует символ \"@\".');\n  cy.get('#exampleInputEmail1').type('login@');\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Введите часть адреса после символа \"@\". Адрес \"1234login@\" неполный.');\n  cy.get('#exampleInputEmail1').type('mail.ru');\n  cy.get('#exampleInputPassword1').invoke('prop', 'validationMessage').should('equal', 'Заполните это поле.');\n  cy.log('Enter valid data');\n  cy.get('#exampleInputEmail1').type('{selectall}{backspace}');\n  cy.get('#exampleInputEmail1').type(data.login);\n  cy.get('#exampleInputPassword1').type(data.password);\n  cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click();\n  cy.log('Log in shop and cross to main page with new tab');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').should('have.text', '\\n                                Test                            ');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').click();\n  cy.get('.nav-item.show > .dropdown-menu');\n  cy.get('[href=\"/user/setup/index\"]').should('have.text', 'Настройки');\n  cy.get('[href=\"/user/lk/index\"]').should('have.text', 'Личный кабинет');\n  cy.get('[href=\"/user/lk/logout\"]').should('have.text', 'Выйти');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'Please include an \\'@\\' in the email address. \\'1234\\' is missing an \\'@\\'.' to equal 'Адрес электронной почты должен содержать символ \"@\". В адресе \"1234\" отсутствует символ \"@\".'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'Please include an \\'@\\' in the email address. \\'1234\\' is missing an \\'@\\'.' to equal 'Адрес электронной почты должен содержать символ \"@\". В адресе \"1234\" отсутствует символ \"@\".'\n    at Context.eval (http://shop.bugred.ru/__cypress/tests?p=cypress/integration/04_login-page.spec.js:123:73)",
+                "diff": "- 'Please include an \\'@\\' in the email address. \\'1234\\' is missing an \\'@\\'.'\n+ 'Адрес электронной почты должен содержать символ \"@\". В адресе \"1234\" отсутствует символ \"@\".'\n"
+              },
+              "uuid": "6ff88505-ba37-4bcd-ac17-d2eb2ac3f1e9",
+              "parentUUID": "8ac52787-cb97-4e1b-8859-9106257cc3dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "144e9b09-9eef-4b38-8e20-3c4e3259abf8",
+            "6ff88505-ba37-4bcd-ac17-d2eb2ac3f1e9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11181,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c373b514-2bad-4514-910c-5144b29c6552",
+      "title": "",
+      "fullFile": "cypress/integration/05_api-test.spec.js",
+      "file": "cypress/integration/05_api-test.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+          "title": "Test api endpoint shop",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get item success",
+              "fullTitle": "Test api endpoint shop Get item success",
+              "timedOut": null,
+              "duration": 229,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'http://shop.bugred.ru/api/items/get/', {\n  \"id\": '51'\n}).then(response => {\n  expect(response.body.result).to.have.property('name', 'Шортики');\n  expect(response.body.result).to.have.property('section', 'Платья');\n  expect(response.body.result).to.have.property('description', 'Модное платье из новой коллекции!');\n  expect(response.body.result).to.have.property('color', 'RED');\n  expect(response.body.result).to.have.property('size', '44');\n  expect(response.body.result).to.have.property('params', '');\n  expect(response.body.result).to.have.property('photo', 'http://shop.bugred.ruhttps://via.placeholder.com/300x300');\n});",
+              "err": {},
+              "uuid": "c685569e-c765-4540-895b-710111d447b5",
+              "parentUUID": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get item price",
+              "fullTitle": "Test api endpoint shop Get item price",
+              "timedOut": null,
+              "duration": 183,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'http://shop.bugred.ru/api/items/get/', {\n  \"id\": '5'\n}).then(response => {\n  expect(response.body.result).to.have.property('price', 1500);\n});",
+              "err": {},
+              "uuid": "7e101985-f5f8-4e1d-8f8c-da657881ea3d",
+              "parentUUID": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get without id",
+              "fullTitle": "Test api endpoint shop Get without id",
+              "timedOut": null,
+              "duration": 168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'http://shop.bugred.ru/api/items/get/').then(response => {\n  expect(response.body).to.have.property('error', 'id_not_filled');\n  expect(response.body).to.have.property('message', 'Поле ID товара  не заполнено');\n});",
+              "err": {},
+              "uuid": "b193c3fa-ae52-4eb8-a190-b2041c442583",
+              "parentUUID": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get item not found",
+              "fullTitle": "Test api endpoint shop Get item not found",
+              "timedOut": null,
+              "duration": 175,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'http://shop.bugred.ru/api/items/get/', {\n  \"id\": '567'\n}).then(response => {\n  expect(response.body).to.have.property('error', 'item_with_id_not_found');\n  expect(response.body).to.have.property('message', 'Товар с ID 567 не найден!');\n});",
+              "err": {},
+              "uuid": "70ec337c-6e01-44c9-8d44-1358f2fe0312",
+              "parentUUID": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get query select item",
+              "fullTitle": "Test api endpoint shop Get query select item",
+              "timedOut": null,
+              "duration": 189,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'http://shop.bugred.ru/api/items/select/', {\n  \"sql_query\": \"select * from items where last_id = 2;\"\n}).then(response => {\n  expect(response.body.result[0]).to.have.property('title', 'Товар 2');\n  expect(response.body.result[0]).to.have.property('price', '1000');\n  expect(response.body.result[0]).to.have.property('image', '/files/tmpfiles/avatar_big.jpg');\n  expect(response.body.result[0]).to.have.property('category', '1');\n  expect(response.body.result[0]).to.have.property('sort', '2');\n});",
+              "err": {},
+              "uuid": "6daa3bf4-6474-4c4c-b99a-d149fc304aed",
+              "parentUUID": "f499e3cc-0ede-46d8-be2f-c296afd52a7a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c685569e-c765-4540-895b-710111d447b5",
+            "7e101985-f5f8-4e1d-8f8c-da657881ea3d",
+            "b193c3fa-ae52-4eb8-a190-b2041c442583",
+            "70ec337c-6e01-44c9-8d44-1358f2fe0312",
+            "6daa3bf4-6474-4c4c-b99a-d149fc304aed"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 944,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
