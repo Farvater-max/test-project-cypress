@@ -20,7 +20,6 @@ jobs:
       
       - name: Copy test execution screenshots
         run: |
-          mkdir public
           cp -r cypress/screenshots public/screenshots
 
       - name: Deploy cypress report
