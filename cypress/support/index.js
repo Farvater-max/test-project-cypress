@@ -39,7 +39,12 @@ Cypress.on('test:after:run', (test, runnable) => {
       const imageUrl = `screenshots/${
         Cypress.spec.name
       }/${fullTestName} (failed).png`
-  
+
+      let videoName = Cypress.spec.name
+      videoName = videoName.replace('/.js.*', '.js')
+      const videoUrl = 'videos/' + videoName + '.mp4'
+
+      addContext({ test }, videoUrl)
       addContext({ test }, imageUrl)
     }
   })
