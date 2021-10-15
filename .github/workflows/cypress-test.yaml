@@ -1,5 +1,7 @@
 name: Run cypress test and publish report
 on:
+  push:
+    branches: ['main']
   pull_request:
     branches: ['main']
 
