@@ -28,7 +28,7 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
       - name: Comment about success action
-        uses: github-actions-up-and-running/pr-comment@v1.0.0
+        uses: JoseThen/comment-pr@v1.1.1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: Tests finished 👍. look at the new report on that page:https://farvater-max.github.io/test-project-cypress/
+          comment: ' Tests finished 👍. look at the new report on that [page](https://farvater-max.github.io/test-project-cypress/)'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
