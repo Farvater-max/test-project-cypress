@@ -6,7 +6,7 @@
   "scripts": {
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports && rm -R -f cypress/screenshots && rm -R -f cypress/videos && rm -R -f public",
     "pretest": "npm run clean:reports",
-    "scripts": "cypress run",
+    "scripts": "cypress run --browser chrome",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
     "generate-report": "marge cypress/reports/mochareports/report.json -f index --reportDir public --assetsDir public/assets",
     "copy-screenshots": "cp -r cypress/screenshots cypress/reports/mochareports/screenshots",
