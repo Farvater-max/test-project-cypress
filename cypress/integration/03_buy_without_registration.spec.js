@@ -29,7 +29,6 @@ describe('Purchase scenario without registration', () => {
 
         cy.log('Enter to basket and look to order')
         cy.get('.float-right > .nav-link').should('have.text', ' 2').click()    
-        cy.screenshot('order_page');
         
         cy.log('Check order sum')
         cy.get('tbody > :nth-child(1) > :nth-child(4)').then(($td) => {
@@ -39,7 +38,7 @@ describe('Purchase scenario without registration', () => {
                 const secondItem = parseFloat($td.text())
 
                 cy.get(':nth-child(3) > :nth-child(4)').then(($td) => {
-                const finalSum = parseFloat($td.text())
+                    const finalSum = parseFloat($td.text())
                 
                 expect(finalSum).to.eq(firstItem + secondItem)
                 })
