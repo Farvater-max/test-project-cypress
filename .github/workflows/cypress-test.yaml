@@ -1,7 +1,5 @@
 name: Run cypress test and publish report
 on:
-  push:
-    branches: ['main']
   pull_request:
     branches: ['main']
 
@@ -14,7 +12,6 @@ jobs:
       - uses: actions/setup-node@v2
         with: 
           node-version: '12'
-          browser: Chrome
       - run: npm ci
       - run: npm run test
       
@@ -29,3 +26,9 @@ jobs:
           publish_dir: ./public
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Deploy cypress report
+        uses: github-actions-up-and-running/pr-comment@v1.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: Tests finished 👍. look at the new report on that [github page](https://farvater-max.github.io/test-project-cypress/)
