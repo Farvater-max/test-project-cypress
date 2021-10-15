@@ -9,7 +9,7 @@ jobs:
   test:
     name: Init and run test 
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -21,7 +21,6 @@ jobs:
       - name: Copy test execution screenshots
         run: |
           cp -r cypress/screenshots public/screenshots
-
 
       - name: Deploy cypress report
         uses: peaceiris/actions-gh-pages@v3
