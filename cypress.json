@@ -9,5 +9,6 @@
                 "html": false,
                 "json": true
             }
-        }
+        },
+        "videoCompression": 15
 }
