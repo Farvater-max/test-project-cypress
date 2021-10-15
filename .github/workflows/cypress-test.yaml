@@ -17,9 +17,9 @@ jobs:
       - run: npm ci
       - run: npm run test
       
-      - name: Copy test execution screenshots and videos
+      - name: Copy test execution videos
         run: |
-          cp -r cypress/screenshots public/screenshots
+          mkdir public
           cp -r cypress/videos public/videos
 
 
