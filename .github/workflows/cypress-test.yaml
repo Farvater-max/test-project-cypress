@@ -31,6 +31,7 @@ jobs:
           
       - name: Comment about success action
         uses: JoseThen/comment-pr@v1.1.1
+        if: github.event_name == 'pull_request'
         with:
           comment: 'Tests finished 👍. look at the new report on that [page](https://farvater-max.github.io/test-project-cypress/)'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
