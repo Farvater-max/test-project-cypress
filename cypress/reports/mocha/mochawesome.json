@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-17T20:43:52.469Z",
+    "end": "2021-10-17T20:43:58.049Z",
+    "duration": 5580,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "280af0f4-f90e-4c5c-b862-3f126309d000",
+      "title": "",
+      "fullFile": "cypress/integration/01_enter-to-shop.spec.js",
+      "file": "cypress/integration/01_enter-to-shop.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d0ad3aa-0627-4f40-bc0c-ff6c3b53ecfd",
+          "title": "Enter to site",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First enter to web-page",
+              "fullTitle": "Enter to site First enter to web-page",
+              "timedOut": null,
+              "duration": 3947,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('title').should('have.text', 'Тестирование');\n  cy.log('Search nav elements');\n  cy.get('.navbar-nav > :nth-child(1) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(2) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').should('exist');\n  cy.get('.navbar-nav > :nth-child(4) > .nav-link').should('exist');\n  cy.log('Search cart icon');\n  cy.get('.fas').should('exist');\n  cy.log('Form input');\n  cy.get('.form-inline > .form-control').should('exist');\n  cy.get('.form-inline > .form-control').invoke('attr', 'placeholder').should('contain', 'Введите название');\n  cy.get('.form-inline > .btn').should('exist');\n  cy.get('.form-inline > .btn').should('have.text', 'Найти');\n  cy.log('Search cart icon');\n  cy.screenshot('main-page');\n});",
+              "err": {},
+              "uuid": "43cc2c7c-7c03-4646-87f4-ba747fbc91dd",
+              "parentUUID": "0d0ad3aa-0627-4f40-bc0c-ff6c3b53ecfd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "43cc2c7c-7c03-4646-87f4-ba747fbc91dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3947,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

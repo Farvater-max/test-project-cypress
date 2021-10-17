@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-17T20:44:14.030Z",
+    "end": "2021-10-17T20:44:19.692Z",
+    "duration": 5662,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2135a743-54f6-46ea-a4cc-ffd52753204d",
+      "title": "",
+      "fullFile": "cypress/integration/03_buy_without_registration.spec.js",
+      "file": "cypress/integration/03_buy_without_registration.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dd4d4dd0-5291-4740-85cf-361e7e1ad251",
+          "title": "Purchase scenario without registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Selection of subjects item",
+              "fullTitle": "Purchase scenario without registration Selection of subjects item",
+              "timedOut": null,
+              "duration": 1324,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('.btn.btn-primary').scrollIntoView().should('be.visible');\n  cy.log('Type select');\n  cy.get(':nth-child(35) > .form-control').type(401);\n  cy.get(':nth-child(36) > .form-control').type(667);\n  cy.log('Submit form and check correct url');\n  cy.get('.btn.btn-primary').click();\n  cy.url().should('eq', 'http://shop.bugred.ru/?price_from=401&price_to=667');\n});",
+              "err": {},
+              "uuid": "347906f6-da2b-4b63-bbf9-0aacf534ed59",
+              "parentUUID": "dd4d4dd0-5291-4740-85cf-361e7e1ad251",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get subjects item in basket",
+              "fullTitle": "Purchase scenario without registration Get subjects item in basket",
+              "timedOut": null,
+              "duration": 2839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('Find item and add to basket');\ncy.visit('http://shop.bugred.ru/?price_from=401&price_to=667');\ncy.get(':nth-child(1) > a > .img').click();\ncy.get('#exampleCount').type('1');\ncy.get('.btn.btn-primary').should('have.text', 'Добавить в корзину').click();\ncy.get('.float-right > .nav-link').should('have.text', ' 1');\ncy.go('back');\ncy.go('back');\ncy.get(':nth-child(2) > a > .img').click();\ncy.get('#exampleCount').type('1');\ncy.get('.btn.btn-primary').should('have.text', 'Добавить в корзину').click();\ncy.log('Enter to basket and look to order');\ncy.get('.float-right > .nav-link').should('have.text', ' 2').click();\ncy.log('Check order sum');\ncy.get('tbody > :nth-child(1) > :nth-child(4)').then($td => {\n  const firstItem = parseFloat($td.text());\n  cy.get('tbody > :nth-child(2) > :nth-child(4)').then($td => {\n    const secondItem = parseFloat($td.text());\n    cy.get(':nth-child(3) > :nth-child(4)').then($td => {\n      const finalSum = parseFloat($td.text());\n      expect(finalSum).to.eq(firstItem + secondItem);\n    });\n  });\n});\ncy.log('Submit order form and correct URL, message');\ncy.get('#InputPhone').type('333-00-99');\ncy.get('#InputAddr').type('Санкт-Петербург, ул. Ленина, д.78, кв.98');\ncy.get('.btn.btn-primary').click();\ncy.get('h4').then($h4 => {\n  const orderNum = parseInt($h4.text().replace(/[^0-9]/g, ''));\n  const urlAdress = 'http://shop.bugred.ru/shop/cart/finish/' + orderNum;\n  const textOrder = 'Ваш заказ №' + orderNum + ' собран и отправлен. Ура!';\n  cy.url().should('eq', urlAdress);\n  cy.get('h4').contains(textOrder);\n});",
+              "err": {},
+              "uuid": "d829f353-4024-4b5a-a58f-8ec1aa91071c",
+              "parentUUID": "dd4d4dd0-5291-4740-85cf-361e7e1ad251",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "347906f6-da2b-4b63-bbf9-0aacf534ed59",
+            "d829f353-4024-4b5a-a58f-8ec1aa91071c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4163,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

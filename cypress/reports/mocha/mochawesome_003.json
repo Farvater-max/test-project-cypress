@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-17T20:44:24.785Z",
+    "end": "2021-10-17T20:44:29.520Z",
+    "duration": 4735,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e810e3e-8728-4b1b-a78a-294bc7f4e3b8",
+      "title": "",
+      "fullFile": "cypress/integration/04_login-page.spec.js",
+      "file": "cypress/integration/04_login-page.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "622efc82-a42b-42c0-8184-ad843b72ed5d",
+          "title": "Login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Open log in pages and check fields and email validation",
+              "fullTitle": "Login page Open log in pages and check fields and email validation",
+              "timedOut": null,
+              "duration": 1481,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to main page');\n  cy.visit(data.main_url);\n  cy.get('title').should('have.text', 'Тестирование');\n  cy.log('Search enter tab');\n  cy.get('.navbar-nav > :nth-child(4) > .nav-link').click();\n  cy.log('Enter to login page');\n  cy.get('.breadcrumb-item.active').should('have.text', 'Авторизация');\n  cy.log('Check placeholder');\n  cy.get('#exampleInputEmail1').invoke('attr', 'placeholder').should('contain', 'Введите email');\n  cy.get('#exampleInputPassword1').invoke('attr', 'placeholder').should('contain', 'Введите пароль');\n  cy.log('Submit if fields empty');\n  cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click();\n  cy.wait(500);\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Заполните это поле.');\n});",
+              "err": {},
+              "uuid": "c8bb0291-fb5f-49a1-a884-e979f0a06363",
+              "parentUUID": "622efc82-a42b-42c0-8184-ad843b72ed5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fields validation and log in",
+              "fullTitle": "Login page Fields validation and log in",
+              "timedOut": null,
+              "duration": 1636,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log('Enter to login page');\n  cy.visit(data.login_url);\n  cy.get('#exampleInputEmail1').type('1234');\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Адрес электронной почты должен содержать символ \"@\". В адресе \"1234\" отсутствует символ \"@\".');\n  cy.get('#exampleInputEmail1').type('login@');\n  cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Введите часть адреса после символа \"@\". Адрес \"1234login@\" неполный.');\n  cy.get('#exampleInputEmail1').type('mail.ru');\n  cy.get('#exampleInputPassword1').invoke('prop', 'validationMessage').should('equal', 'Заполните это поле.');\n  cy.log('Enter valid data');\n  cy.get('#exampleInputEmail1').type('{selectall}{backspace}');\n  cy.get('#exampleInputEmail1').type(data.login);\n  cy.get('#exampleInputPassword1').type(data.password);\n  cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click();\n  cy.log('Log in shop and cross to main page with new tab');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').should('have.text', '\\n                                Test                            ');\n  cy.get('.navbar-nav > :nth-child(3) > .nav-link').click();\n  cy.get('.nav-item.show > .dropdown-menu');\n  cy.get('[href=\"/user/setup/index\"]').should('have.text', 'Настройки');\n  cy.get('[href=\"/user/lk/index\"]').should('have.text', 'Личный кабинет');\n  cy.get('[href=\"/user/lk/logout\"]').should('have.text', 'Выйти');\n});",
+              "err": {},
+              "uuid": "7295aef4-8f43-49f4-9fe1-3853aea2d7c3",
+              "parentUUID": "622efc82-a42b-42c0-8184-ad843b72ed5d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c8bb0291-fb5f-49a1-a884-e979f0a06363",
+            "7295aef4-8f43-49f4-9fe1-3853aea2d7c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3117,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
