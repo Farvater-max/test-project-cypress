@@ -19,7 +19,7 @@ describe('Login page', () => {
             cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click()
             cy.wait(500)
             cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage')
-                .should('equal', 'Заполните это поле.')
+                .should('equal', 'Please fill out this field.')
         })
      })
         

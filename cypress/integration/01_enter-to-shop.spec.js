@@ -20,9 +20,6 @@ describe('Enter to site', () => {
 
             cy.get('.form-inline > .btn').should('exist')
             cy.get('.form-inline > .btn').should('have.text', 'Найти') 
-
-            cy.log('Search cart icon')  
-            cy.screenshot('main-page');
         })
     })
 });
