@@ -7,8 +7,14 @@ describe('Scenario registration and purchase', () => {
             cy.get('#exampleInputPassword1').type(data.password)
             cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click()
 
-            cy.get(':nth-child(7) > .nav-link').should('have.text', 'Верхняя одежда').click()
-            cy.get(':nth-child(3) > .page-link').scrollIntoView().should('be.visible')
+            cy.get('.btn.btn-primary').scrollIntoView().should('be.visible')
+            
+            cy.log('Filter item to buy')
+            cy.get(':nth-child(35) > .form-control').type(522) 
+            cy.get(':nth-child(36) > .form-control').type(899)
+            cy.log('Submit form and check correct url')
+            cy.get('.btn.btn-primary').click()
+            cy.url().should('eq', 'http://shop.bugred.ru/?price_from=522&price_to=899')
 
             cy.log('Find item and add to basket')
             cy.get(':nth-child(10) > a > .img').click()
@@ -52,6 +58,7 @@ describe('Scenario registration and purchase', () => {
                 expect(finalSum).to.eq(firstItem)
                 })
             })
+            
             cy.log('Fill out the form')
             cy.get('.col-md-6 > .form-group > #InputSelect').select('7')
             cy.get('.col-md-5 > .form-group > #InputSelect').select('7')
