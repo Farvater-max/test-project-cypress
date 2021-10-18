@@ -32,3 +32,4 @@ describe('Change device viewport', () => {
         })
     })
 });
+
