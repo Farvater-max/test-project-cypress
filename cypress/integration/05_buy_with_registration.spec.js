@@ -58,6 +58,7 @@ describe('Scenario registration and purchase', () => {
                 expect(finalSum).to.eq(firstItem)
                 })
             })
+            
             cy.log('Fill out the form')
             cy.get('.col-md-6 > .form-group > #InputSelect').select('7')
             cy.get('.col-md-5 > .form-group > #InputSelect').select('7')
