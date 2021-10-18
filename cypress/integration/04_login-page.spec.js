@@ -18,8 +18,7 @@ describe('Login page', () => {
             cy.log('Submit if fields empty')
             cy.get(':nth-child(1) > form > .btn').should('have.text', 'Войти').click()
             cy.wait(500)
-            cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage')
-                .should('equal', 'Please fill out this field.')
+            cy.get('#exampleInputEmail1').invoke('prop', 'validationMessage').should('equal', 'Please fill out this field.')
         })
      })
         

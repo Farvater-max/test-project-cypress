@@ -46,27 +46,27 @@ describe('Test api endpoint shop', () => {
             }
         )
     })
-    it('POST Create item', () => {
-        cy.fixture('example.json').then(data => {
-            cy.request('POST', 'http://shop.bugred.ru/api/items/create/', 
-            {
-                "name":"Вечернее платье",
-                "section":"Платья",
-                "description":"Платье для активного времяпрепровождения",
-                "color":"BLUE",
-                "size":44,
-                "price":1599,
-                "params":"dress",
-                "photo": data.image
-            }).then(
-                (response) => {
-                    expect(response.body.result).to.have.property('name','Вечернее платье') 
-                    expect(response.body.result).to.have.property('price', 1599) 
-                    expect(response.body.result).to.have.property('color', 'BLUE') 
-                    expect(response.body.result).to.have.property('params', 'dress') 
-                    expect(response.body.result).to.have.property('description', 'Платье для активного времяпрепровождения')
-                }
-            )
-        })
-    })
+    // it('POST Create item', () => {
+    //     cy.fixture('example.json').then(data => {
+    //         cy.request('POST', 'http://shop.bugred.ru/api/items/create/', 
+    //         {
+    //             "name":"Вечернее платье",
+    //             "section":"Платья",
+    //             "description":"Платье для активного времяпрепровождения",
+    //             "color":"BLUE",
+    //             "size":44,
+    //             "price":1599,
+    //             "params":"dress",
+    //             "photo": data.image
+    //         }).then(
+    //             (response) => {
+    //                 expect(response.body.result).to.have.property('name','Вечернее платье') 
+    //                 expect(response.body.result).to.have.property('price', 1599) 
+    //                 expect(response.body.result).to.have.property('color', 'BLUE') 
+    //                 expect(response.body.result).to.have.property('params', 'dress') 
+    //                 expect(response.body.result).to.have.property('description', 'Платье для активного времяпрепровождения')
+    //             }
+    //         )
+    //     })
+    // })
 });
