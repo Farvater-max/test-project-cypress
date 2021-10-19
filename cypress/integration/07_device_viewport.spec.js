@@ -1,4 +1,4 @@
-describe('Change device viewport', () => {
+describe('Change viewport size', () => {
     it('Viewport Iphone 6/7/8', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page devise')
