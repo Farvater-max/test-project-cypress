@@ -1,5 +1,5 @@
-describe('Enter to site', () => {
-    it('First enter to web-page', () => {
+describe('Enter to shop', () => {
+    it('Should exist elements at main page', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page')
             cy.visit(data.main_url)

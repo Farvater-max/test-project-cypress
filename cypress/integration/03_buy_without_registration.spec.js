@@ -1,5 +1,5 @@
 describe('Purchase scenario without registration', () => {
-    it('Selection of subjects item', () => {
+    it('Should select of subjects item', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page')
             cy.visit(data.main_url)
@@ -14,7 +14,7 @@ describe('Purchase scenario without registration', () => {
         })
     })
 
-    it('Get subjects item in basket', () => {
+    it('Should put subjects item in basket', () => {
         cy.log('Find item and add to basket')
         cy.visit('http://shop.bugred.ru/?price_from=401&price_to=667')
         cy.get(':nth-child(1) > a > .img').click()

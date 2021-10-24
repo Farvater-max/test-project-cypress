@@ -1,5 +1,5 @@
 describe('Test api endpoint shop', () => {
-    it('Get item success', () => {
+    it('Should GET item success', () => {
         cy.request('GET', 'http://shop.bugred.ru/api/items/get/', { "id": '51' }).then(
             (response) => {
                 expect(response.body.result).to.have.property('name', 'Шортики') 
@@ -12,14 +12,14 @@ describe('Test api endpoint shop', () => {
             }
         )
     })
-    it('Get item price', () => {
+    it('Should GET item price', () => {
         cy.request('GET', 'http://shop.bugred.ru/api/items/get/', { "id": '5' }).then(
             (response) => {
                 expect(response.body.result).to.have.property('price', 1500)  
             }
         )
     })
-    it('Get without id', () => {
+    it('Should right error message(id not filled)', () => {
         cy.request('GET', 'http://shop.bugred.ru/api/items/get/').then(
             (response) => {
                 expect(response.body).to.have.property('error', 'id_not_filled')  
@@ -27,7 +27,7 @@ describe('Test api endpoint shop', () => {
             }
         )
     })
-    it('Get item not found', () => {
+    it('Should right error message(not found)', () => {
         cy.request('GET', 'http://shop.bugred.ru/api/items/get/', {"id": '567'}).then(
             (response) => {
                 expect(response.body).to.have.property('error', 'item_with_id_not_found')  
@@ -35,7 +35,7 @@ describe('Test api endpoint shop', () => {
             }
         )
     })
-    it('Get query select item', () => {
+    it('Should GET item by query select', () => {
         cy.request('GET', 'http://shop.bugred.ru/api/items/select/', {"sql_query": "select * from items where last_id = 2;"}).then(
             (response) => {
                 expect(response.body.result[0]).to.have.property('title', 'Товар 2') 
@@ -46,7 +46,7 @@ describe('Test api endpoint shop', () => {
             }
         )
     })
-    it('POST Create item', () => {
+    it('Should create item at shop', () => {
         cy.fixture('example.json').then(data => {
             cy.request('POST', 'http://shop.bugred.ru/api/items/create/', 
             {

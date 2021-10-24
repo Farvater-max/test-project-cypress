@@ -1,5 +1,5 @@
 describe('Change viewport size', () => {
-    it('Viewport Iphone 6/7/8', () => {
+    it('Should correct image on change size(mob)', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page devise')
             cy.viewport(375, 667)
@@ -15,7 +15,7 @@ describe('Change viewport size', () => {
             cy.get('.form-inline > .btn').should('exist')   
         })
     })
-    it('Viewport tablet', () => {
+    it('Should correct image on change size(tablet)', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page tablet')
             cy.viewport(768, 1024)

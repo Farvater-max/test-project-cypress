@@ -1,5 +1,5 @@
 describe('Login page', () => {
-    it('Open log in pages and check fields and email validation', () => {
+    it('Should check fields and email validation', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page')
             cy.visit(data.main_url)
@@ -22,7 +22,7 @@ describe('Login page', () => {
         })
      })
         
-     it('Fields validation and log in', () => {
+     it('Should log in by valid data', () => {
          cy.fixture('example.json').then(data => {
             cy.log('Enter to login page')
             cy.visit(data.login_url)

@@ -1,5 +1,5 @@
 describe('Scenario registration and purchase', () => {
-     it('Registration and buy some item, check sum and order', () => {
+     it('Should registration, buy something, check sum and order', () => {
         cy.fixture('example.json').then(data => {
             cy.visit(data.login_url)
             cy.log('Enter valid data') 

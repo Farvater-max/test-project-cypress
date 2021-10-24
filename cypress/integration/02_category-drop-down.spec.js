@@ -1,5 +1,5 @@
 describe('Category navbar dropdow by click', () => {
-    it('Dropdow by click', () => {
+    it('Should dropdow menu by click and exist elements', () => {
         cy.fixture('example.json').then(data => {
             cy.log('Enter to main page')
             cy.visit(data.main_url)
