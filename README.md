@@ -4,7 +4,7 @@ Project for testing with CI on Github actions and publish a report on GitHub pag
 ## To get report
 If you create PR or push your code in `main` branch will start Github actions for running cypress test and you can look at the new report on [github pages](https://farvater-max.github.io/test-project-cypress/) in this repo
 
-![report_images](https://github.com/Farvater-max/test-project-cypress/images/report_01.jpg)
+![report_images](./images/report_01.png)
 
 <details>
   <summary>How it works</summary>
